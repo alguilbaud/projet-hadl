@@ -4,8 +4,8 @@ public class AttachmentConfReq extends Attachment {
 	private ReqPortConf to;
 	private ReqConfRole from;
 	
-	public AttachmentConfReq(ReqPortConf to, ReqConfRole from) {
-		super();
+	public AttachmentConfReq(String s, ReqPortConf to, ReqConfRole from) {
+		super(s);
 		this.to = to;
 		this.from = from;
 	}

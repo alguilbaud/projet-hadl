@@ -4,8 +4,8 @@ public class AttachmentConfPro extends Attachment {
 	private ProPortConf from;
 	private ProConfRole to;
 	
-	public AttachmentConfPro(ProPortConf from, ProConfRole to) {
-		super();
+	public AttachmentConfPro(String s, ProPortConf from, ProConfRole to) {
+		super(s);
 		this.from = from;
 		this.to = to;
 	}

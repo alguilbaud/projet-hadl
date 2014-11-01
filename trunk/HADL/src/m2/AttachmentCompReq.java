@@ -4,8 +4,8 @@ public class AttachmentCompReq extends Attachment{
 	private ReqPortComp to;
 	private ReqCompRole from;
 	
-	public AttachmentCompReq(ReqPortComp to, ReqCompRole from) {
-		super();
+	public AttachmentCompReq(String s, ReqPortComp to, ReqCompRole from) {
+		super(s);
 		this.to = to;
 		this.from = from;
 	}
