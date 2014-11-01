@@ -9,7 +9,8 @@ public class Configuration extends Element{
 	private ArrayList<Attachment> tabAttachment;
 	private ArrayList<Connector> tabConnector;
 	
-	public Configuration(){
+	public Configuration(String s){
+		super(s);
 		tabElement = new ArrayList<Element>();
 		tabBinding = new ArrayList<Binding>();
 		tabInterfaceConf = new ArrayList<InterfaceConf>();

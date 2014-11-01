@@ -14,12 +14,19 @@ public class Structure {
 	public void addElement(Element e){
 		tabElement.add(e);
 	}
-	
 	public void removeElement(int i){
 		tabElement.remove(i);
 	}
-	
 	public Element getElement(int i){
 		return tabElement.get(i);
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 }
