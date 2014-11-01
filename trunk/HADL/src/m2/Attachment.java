@@ -1,5 +1,5 @@
 package m2;
 
-public class Attachment {
+public abstract class Attachment {
 
 }
