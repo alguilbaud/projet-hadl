@@ -41,4 +41,41 @@ public class System extends Configuration {
 	public void removeAttachmentOut(String a){
 		removeAttachment(a);
 	}
+	
+	
+	public Server getServer(String s){
+		Server server = null;
+		try{
+			server = (Server) getElement(s);
+		} catch (Exception e){}
+		return server;
+	}
+	
+	public Client getClient(String c){
+		Client client = null;
+		try{
+			client = (Client) getElement(c);
+		} catch (Exception e){}
+		return client;
+	}
+	
+	public RPC getRPC(String r){
+		return (RPC) getConnector(r);
+	}
+	
+	public AttachmentIn getAttachmentIn(String a){
+		AttachmentIn att = null;
+		try{
+			att = (AttachmentIn) getAttachment(a);
+		} catch (Exception e){}
+		return att;
+	}
+	
+	public AttachmentOut getAttachmentOut(String a){
+		AttachmentOut att = null;
+		try{
+			att = (AttachmentOut) getAttachment(a);
+		} catch (Exception e){}
+		return att;
+	}
 }
