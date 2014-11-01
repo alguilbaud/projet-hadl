@@ -1,17 +1,17 @@
 package m2;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class SimpleConnector extends Connector {
-	private ArrayList<Role> tabRole;
+	private HashMap<String, Role> mapRole;
 	private Glue glue;
 	
 	public SimpleConnector(String s, Glue g, Role r1, Role r2){
 		super(s);
-		tabRole = new ArrayList<Role>();
+		mapRole = new HashMap<String, Role>();
 		glue = g;
-		tabRole.add(r1);
-		tabRole.add(r2);
+		mapRole.put(r1.getName(), r1);
+		mapRole.put(r2.getName(), r2);
 	}
 
 	public Glue getGlue() {
@@ -21,14 +21,14 @@ public class SimpleConnector extends Connector {
 		this.glue = glue;
 	}
 
-	public void addRole(Role r){
-		tabRole.add(r);
+	public void putRole(Role r){
+		mapRole.put(r.getName(), r);
 	}
-	public void removeRole(int i){
-		tabRole.remove(i);
+	public void removeRole(String s){
+		mapRole.remove(s);
 	}
-	public Role getRole(int i){
-		return tabRole.get(i);
+	public Role getRole(String s){
+		return mapRole.get(s);
 	}
 	
 }
