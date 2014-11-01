@@ -10,7 +10,7 @@ public class Component extends Element{
 		mapInterfaceComp = new HashMap<String, InterfaceComp>();
 	}
 	
-	public void addInterface(InterfaceComp ic){
+	public void putInterface(InterfaceComp ic){
 		mapInterfaceComp.put(ic.getName(), ic);
 	}
 	public void removeInterfaceComp(String s){
