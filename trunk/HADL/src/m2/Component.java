@@ -1,23 +1,23 @@
 package m2;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Component extends Element{
-	private ArrayList<InterfaceComp> tabInterfaceComp;
+	private HashMap<String, InterfaceComp> mapInterfaceComp;
 	
 	public Component(String s){
 		super(s);
-		tabInterfaceComp = new ArrayList<InterfaceComp>();
+		mapInterfaceComp = new HashMap<String, InterfaceComp>();
 	}
 	
 	public void addInterface(InterfaceComp ic){
-		tabInterfaceComp.add(ic);
+		mapInterfaceComp.put(ic.getName(), ic);
 	}
-	public void removeInterfaceComp(int i){
-		tabInterfaceComp.remove(i);
+	public void removeInterfaceComp(String s){
+		mapInterfaceComp.remove(s);
 	}
-	public InterfaceComp getInterfaceComp(int i){
-		return tabInterfaceComp.get(i);
+	public InterfaceComp getInterfaceComp(String s){
+		return mapInterfaceComp.get(s);
 	}
 	
 }

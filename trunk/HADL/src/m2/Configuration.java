@@ -1,70 +1,70 @@
 package m2;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Configuration extends Element{
-	private ArrayList<Element> tabElement;
-	private ArrayList<Binding> tabBinding;
-	private ArrayList<InterfaceConf> tabInterfaceConf;
-	private ArrayList<Attachment> tabAttachment;
-	private ArrayList<Connector> tabConnector;
+	private HashMap<String, Element> tabElement;
+	private HashMap<String, Binding> tabBinding;
+	private HashMap<String, InterfaceConf> tabInterfaceConf;
+	private HashMap<String, Attachment> tabAttachment;
+	private HashMap<String, Connector> tabConnector;
 	
 	public Configuration(String s){
 		super(s);
-		tabElement = new ArrayList<Element>();
-		tabBinding = new ArrayList<Binding>();
-		tabInterfaceConf = new ArrayList<InterfaceConf>();
-		tabAttachment = new ArrayList<Attachment>();
-		tabConnector = new ArrayList<Connector>();
+		tabElement = new HashMap<String, Element>();
+		tabBinding = new HashMap<String, Binding>();
+		tabInterfaceConf = new HashMap<String, InterfaceConf>();
+		tabAttachment = new HashMap<String, Attachment>();
+		tabConnector = new HashMap<String, Connector>();
 	}
 	
-	public void addElement(Element e){
-		tabElement.add(e);
+	public void putElement(Element e){
+		tabElement.put(e.getName(), e);
 	}
-	public void removeElement(int i){
-		tabElement.remove(i);
+	public void removeElement(String s){
+		tabElement.remove(s);
 	}
-	public Element getElement(int i){
-		return tabElement.get(i);
-	}
-	
-	public void addBinding(Binding b){
-		tabBinding.add(b);
-	}
-	public void removeBinding(int i){
-		tabBinding.remove(i);
-	}
-	public Binding getBinding(int i){
-		return tabBinding.get(i);
+	public Element getElement(String s){
+		return tabElement.get(s);
 	}
 	
-	public void addInterfaceConf(InterfaceConf ic){
-		tabInterfaceConf.add(ic);
+	public void putBinding(Binding b){
+		tabBinding.put(b.getName(), b);
 	}
-	public void removeInterfaceConf(int i){
-		tabInterfaceConf.remove(i);
+	public void removeBinding(String s){
+		tabBinding.remove(s);
 	}
-	public InterfaceConf getInterfaceConf(int i){
-		return tabInterfaceConf.get(i);
+	public Binding getBinding(String s){
+		return tabBinding.get(s);
+	}
+	
+	public void putInterfaceConf(InterfaceConf ic){
+		tabInterfaceConf.put(ic.getName(), ic);
+	}
+	public void removeInterfaceConf(String s){
+		tabInterfaceConf.remove(s);
+	}
+	public InterfaceConf getInterfaceConf(String s){
+		return tabInterfaceConf.get(s);
 	}
 
-	public void addAttachment(Attachment a){
-		tabAttachment.add(a);
+	public void putAttachment(Attachment a){
+		tabAttachment.put(a.getName(), a);
 	}
-	public void removeAttachment(int i){
-		tabAttachment.remove(i);
+	public void removeAttachment(String s){
+		tabAttachment.remove(s);
 	}
-	public Attachment getAttachment(int i){
-		return tabAttachment.get(i);
+	public Attachment getAttachment(String s){
+		return tabAttachment.get(s);
 	}
 	
-	public void addConnector(Connector c){
-		tabConnector.add(c);
+	public void putConnector(Connector c){
+		tabConnector.put(c.getName(), c);
 	}
-	public void removeConnector(int i){
-		tabConnector.remove(i);
+	public void removeConnector(String s){
+		tabConnector.remove(s);
 	}
-	public Connector getConnector(int i){
-		return tabConnector.get(i);
+	public Connector getConnector(String s){
+		return tabConnector.get(s);
 	}
 }
