@@ -1,6 +1,6 @@
 package m2;
 
-public class Element {
+public abstract class Element {
 	private String name;
 
 	public Element(String name) {

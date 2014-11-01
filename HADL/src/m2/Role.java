@@ -1,6 +1,6 @@
 package m2;
 
-public class Role {
+public abstract class Role {
 	private String name;
 
 	public Role(String name) {

@@ -3,8 +3,10 @@ package m2;
 public class Binding {
 	private ReqPortComp to;
 	private ProPortConf from;
+	private String name;
 	
-	public Binding(ReqPortComp to, ProPortConf from) {
+	public Binding(String s, ReqPortComp to, ProPortConf from) {
+		this.name = s;
 		this.to = to;
 		this.from = from;
 	}

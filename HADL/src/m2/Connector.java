@@ -1,6 +1,6 @@
 package m2;
 
-public class Connector {
+public abstract class Connector {
 	private String name;
 	
 	public Connector(String s){

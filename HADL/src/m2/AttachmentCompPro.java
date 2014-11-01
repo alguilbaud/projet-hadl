@@ -4,8 +4,8 @@ public class AttachmentCompPro extends Attachment {
 	private ProPortComp from;
 	private ProCompRole to;
 	
-	public AttachmentCompPro(ProPortComp from, ProCompRole to) {
-		super();
+	public AttachmentCompPro(String s, ProPortComp from, ProCompRole to) {
+		super(s);
 		this.from = from;
 		this.to = to;
 	}
