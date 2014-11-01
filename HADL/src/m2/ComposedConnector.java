@@ -6,9 +6,12 @@ public class ComposedConnector extends Connector {
 	private ArrayList<Connector> tabConnector;
 	private ArrayList<Role> tabRole;
 	
-	public ComposedConnector(){
+	public ComposedConnector(String s, Role r1, Role r2){
+		super(s);
 		tabConnector = new ArrayList<Connector>();
 		tabRole = new ArrayList<Role>();
+		tabRole.add(r1);
+		tabRole.add(r2);
 	}
 	
 	public void addConnector(Connector c){

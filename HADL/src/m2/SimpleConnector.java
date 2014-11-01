@@ -4,13 +4,23 @@ import java.util.ArrayList;
 
 public class SimpleConnector extends Connector {
 	private ArrayList<Role> tabRole;
-	private ArrayList<Glue> tabGlue;
+	private Glue glue;
 	
-	public SimpleConnector(){
+	public SimpleConnector(String s, Glue g, Role r1, Role r2){
+		super(s);
 		tabRole = new ArrayList<Role>();
-		tabGlue = new ArrayList<Glue>();
+		glue = g;
+		tabRole.add(r1);
+		tabRole.add(r2);
 	}
-	
+
+	public Glue getGlue() {
+		return glue;
+	}
+	public void setGlue(Glue glue) {
+		this.glue = glue;
+	}
+
 	public void addRole(Role r){
 		tabRole.add(r);
 	}
@@ -21,13 +31,4 @@ public class SimpleConnector extends Connector {
 		return tabRole.get(i);
 	}
 	
-	public void addGlue(Glue g){
-		tabGlue.add(g);
-	}
-	public void removeGlue(int i){
-		tabGlue.remove(i);
-	}
-	public Glue getGlue(int i){
-		return tabGlue.get(i);
-	}
 }
