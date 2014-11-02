@@ -25,6 +25,6 @@ public class AttachmentOut extends AttachmentCompReq{
 	}
 	
 	public String toString(){
-		return "AttachmentOut "+getName()+" {"+getFrom()+" (from) linked with "+getTo()+" (to)}";
+		return "AttachmentOut "+getName()+" [from : "+getFrom()+", to : "+getTo()+"]";
 	}
 }

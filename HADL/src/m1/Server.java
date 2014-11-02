@@ -23,7 +23,7 @@ public class Server extends Component{
 	}
 	
 	public String toString (){
-		String result = "Server" + getName() + " [";
+		String result = "Server " + getName() + " [";
 		boolean premier = true;
 		for(InterfaceComp i : getAllInterfacesComp()){
 			if (premier){
