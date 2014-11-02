@@ -15,23 +15,23 @@ public class SimpleConnector extends Connector {
 		glue = null;
 	}
 
-	public Glue getGlue() {
+	protected Glue getGlue() {
 		return glue;
 	}
-	public void setGlue(Glue glue) {
+	protected void setGlue(Glue glue) {
 		this.glue = glue;
 	}
 
-	public void putRole(Role r){
+	protected void putRole(Role r){
 		mapRole.put(r.getName(), r);
 	}
-	public void removeRole(String s){
+	protected void removeRole(String s){
 		mapRole.remove(s);
 	}
-	public Role getRole(String s){
+	protected Role getRole(String s){
 		return mapRole.get(s);
 	}
-	public Collection<Role> getAllRoles(){
+	protected Collection<Role> getAllRoles(){
 		return mapRole.values();
 	}
 }

@@ -11,19 +11,19 @@ public class Binding {
 		this.from = from;
 	}
 
-	public ReqPortComp getTo() {
+	protected ReqPortComp getTo() {
 		return to;
 	}
 
-	public void setTo(ReqPortComp to) {
+	protected void setTo(ReqPortComp to) {
 		this.to = to;
 	}
 
-	public ProPortConf getFrom() {
+	protected ProPortConf getFrom() {
 		return from;
 	}
 
-	public void setFrom(ProPortConf from) {
+	protected void setFrom(ProPortConf from) {
 		this.from = from;
 	}
 

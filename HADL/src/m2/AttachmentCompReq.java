@@ -10,17 +10,17 @@ public class AttachmentCompReq extends Attachment{
 		this.from = from;
 	}
 
-	public ReqPortComp getTo() {
+	protected ReqPortComp getTo() {
 		return to;
 	}
-	public void setTo(ReqPortComp to) {
+	protected void setTo(ReqPortComp to) {
 		this.to = to;
 	}
 
-	public ReqCompRole getFrom() {
+	protected ReqCompRole getFrom() {
 		return from;
 	}
-	public void setFrom(ReqCompRole from) {
+	protected void setFrom(ReqCompRole from) {
 		this.from = from;
 	}
 	

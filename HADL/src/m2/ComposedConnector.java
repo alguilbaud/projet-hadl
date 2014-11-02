@@ -15,29 +15,29 @@ public class ComposedConnector extends Connector {
 		mapRole.put(r2.getName(), r2);
 	}
 	
-	public void putConnector(Connector c){
+	protected void putConnector(Connector c){
 		mapConnector.put(c.getName(), c);
 	}
-	public void removeConnector(String s){
+	protected void removeConnector(String s){
 		mapConnector.remove(s);
 	}
-	public Connector getConnector(String s){
+	protected Connector getConnector(String s){
 		return mapConnector.get(s);
 	}
-	public Collection<Connector> getAllConnectors(){
+	protected Collection<Connector> getAllConnectors(){
 		return mapConnector.values();
 	}
 	
-	public void putRole(Role r){
+	protected void putRole(Role r){
 		mapRole.put(r.getName(), r);
 	}
-	public void removeRole(String s){
+	protected void removeRole(String s){
 		mapRole.remove(s);
 	}
-	public Role getRole(String s){
+	protected Role getRole(String s){
 		return mapRole.get(s);
 	}
-	public Collection<Role> getAllRoles(){
+	protected Collection<Role> getAllRoles(){
 		return mapRole.values();
 	}
 }

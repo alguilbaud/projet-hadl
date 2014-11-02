@@ -11,16 +11,16 @@ public class Component extends Element{
 		mapInterfaceComp = new HashMap<String, InterfaceComp>();
 	}
 	
-	public void putInterfaceComp(InterfaceComp ic){
+	protected void putInterfaceComp(InterfaceComp ic){
 		mapInterfaceComp.put(ic.getName(), ic);
 	}
-	public void removeInterfaceComp(String s){
+	protected void removeInterfaceComp(String s){
 		mapInterfaceComp.remove(s);
 	}
-	public InterfaceComp getInterfaceComp(String s){
+	protected InterfaceComp getInterfaceComp(String s){
 		return mapInterfaceComp.get(s);
 	}
-	public Collection<InterfaceComp> getAllInterfacesComp(){
+	protected Collection<InterfaceComp> getAllInterfacesComp(){
 		return mapInterfaceComp.values();
 	}
 	

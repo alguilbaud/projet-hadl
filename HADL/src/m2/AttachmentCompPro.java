@@ -10,17 +10,17 @@ public class AttachmentCompPro extends Attachment {
 		this.to = to;
 	}
 
-	public ProPortComp getFrom() {
+	protected ProPortComp getFrom() {
 		return from;
 	}
-	public void setFrom(ProPortComp from) {
+	protected void setFrom(ProPortComp from) {
 		this.from = from;
 	}
 
-	public ProCompRole getTo() {
+	protected ProCompRole getTo() {
 		return to;
 	}
-	public void setTo(ProCompRole to) {
+	protected void setTo(ProCompRole to) {
 		this.to = to;
 	}
 		

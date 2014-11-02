@@ -10,17 +10,17 @@ public class AttachmentConfPro extends Attachment {
 		this.to = to;
 	}
 
-	public ProPortConf getFrom() {
+	protected ProPortConf getFrom() {
 		return from;
 	}
-	public void setFrom(ProPortConf from) {
+	protected void setFrom(ProPortConf from) {
 		this.from = from;
 	}
 
-	public ProConfRole getTo() {
+	protected ProConfRole getTo() {
 		return to;
 	}
-	public void setTo(ProConfRole to) {
+	protected void setTo(ProConfRole to) {
 		this.to = to;
 	}
 	

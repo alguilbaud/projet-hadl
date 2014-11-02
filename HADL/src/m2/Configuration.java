@@ -19,68 +19,68 @@ public class Configuration extends Element{
 		mapConnector = new HashMap<String, Connector>();
 	}
 	
-	public void putElement(Element e){
+	protected void putElement(Element e){
 		mapElement.put(e.getName(), e);
 	}
-	public void removeElement(String s){
+	protected void removeElement(String s){
 		mapElement.remove(s);
 	}
-	public Element getElement(String s){
+	protected Element getElement(String s){
 		return mapElement.get(s);
 	}
-	public Collection<Element> getAllElements(){
+	protected Collection<Element> getAllElements(){
 		return mapElement.values();
 	}
 	
-	public void putBinding(Binding b){
+	protected void putBinding(Binding b){
 		mapBinding.put(b.getName(), b);
 	}
-	public void removeBinding(String s){
+	protected void removeBinding(String s){
 		mapBinding.remove(s);
 	}
-	public Binding getBinding(String s){
+	protected Binding getBinding(String s){
 		return mapBinding.get(s);
 	}
-	public Collection<Binding> getAllBindings(){
+	protected Collection<Binding> getAllBindings(){
 		return mapBinding.values();
 	}
 	
-	public void putInterfaceConf(InterfaceConf ic){
+	protected void putInterfaceConf(InterfaceConf ic){
 		mapInterfaceConf.put(ic.getName(), ic);
 	}
-	public void removeInterfaceConf(String s){
+	protected void removeInterfaceConf(String s){
 		mapInterfaceConf.remove(s);
 	}
-	public InterfaceConf getInterfaceConf(String s){
+	protected InterfaceConf getInterfaceConf(String s){
 		return mapInterfaceConf.get(s);
 	}
-	public Collection<InterfaceConf> getAllInterfacesConf(){
+	protected Collection<InterfaceConf> getAllInterfacesConf(){
 		return mapInterfaceConf.values();
 	}
 
-	public void putAttachment(Attachment a){
+	protected void putAttachment(Attachment a){
 		mapAttachment.put(a.getName(), a);
 	}
-	public void removeAttachment(String s){
+	protected void removeAttachment(String s){
 		mapAttachment.remove(s);
 	}
-	public Attachment getAttachment(String s){
+	protected Attachment getAttachment(String s){
 		return mapAttachment.get(s);
 	}
-	public Collection<Attachment> getAllAttachments(){
+	protected Collection<Attachment> getAllAttachments(){
 		return mapAttachment.values();
 	}
 	
-	public void putConnector(Connector c){
+	protected void putConnector(Connector c){
 		mapConnector.put(c.getName(), c);
 	}
-	public void removeConnector(String s){
+	protected void removeConnector(String s){
 		mapConnector.remove(s);
 	}
-	public Connector getConnector(String s){
+	protected Connector getConnector(String s){
 		return mapConnector.get(s);
 	}
-	public Collection<Connector> getAllConnectors(){
+	protected Collection<Connector> getAllConnectors(){
 		return mapConnector.values();
 	}
 }
