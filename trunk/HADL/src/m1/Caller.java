@@ -4,4 +4,7 @@ import m2.ProCompRole;
 
 public class Caller extends ProCompRole{
 
+	public Caller(String name){
+		super(name);
+	}
 }
