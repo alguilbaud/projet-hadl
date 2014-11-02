@@ -1,5 +1,6 @@
 package m2;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 public class Component extends Element{
@@ -18,6 +19,9 @@ public class Component extends Element{
 	}
 	public InterfaceComp getInterfaceComp(String s){
 		return mapInterfaceComp.get(s);
+	}
+	public Collection<InterfaceComp> getAllInterfacesComp(){
+		return mapInterfaceComp.values();
 	}
 	
 }

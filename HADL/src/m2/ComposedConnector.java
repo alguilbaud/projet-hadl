@@ -1,5 +1,6 @@
 package m2;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 public class ComposedConnector extends Connector {
@@ -23,6 +24,9 @@ public class ComposedConnector extends Connector {
 	public Connector getConnector(String s){
 		return mapConnector.get(s);
 	}
+	public Collection<Connector> getAllConnectors(){
+		return mapConnector.values();
+	}
 	
 	public void putRole(Role r){
 		mapRole.put(r.getName(), r);
@@ -32,5 +36,8 @@ public class ComposedConnector extends Connector {
 	}
 	public Role getRole(String s){
 		return mapRole.get(s);
+	}
+	public Collection<Role> getAllRoles(){
+		return mapRole.values();
 	}
 }
