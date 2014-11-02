@@ -1,5 +1,6 @@
 package m2;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 public class SimpleConnector extends Connector {
@@ -30,5 +31,7 @@ public class SimpleConnector extends Connector {
 	public Role getRole(String s){
 		return mapRole.get(s);
 	}
-	
+	public Collection<Role> getAllRoles(){
+		return mapRole.values();
+	}
 }

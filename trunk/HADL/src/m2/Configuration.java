@@ -1,5 +1,6 @@
 package m2;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 public class Configuration extends Element{
@@ -27,6 +28,9 @@ public class Configuration extends Element{
 	public Element getElement(String s){
 		return mapElement.get(s);
 	}
+	public Collection<Element> getAllElements(){
+		return mapElement.values();
+	}
 	
 	public void putBinding(Binding b){
 		mapBinding.put(b.getName(), b);
@@ -36,6 +40,9 @@ public class Configuration extends Element{
 	}
 	public Binding getBinding(String s){
 		return mapBinding.get(s);
+	}
+	public Collection<Binding> getAllBindings(){
+		return mapBinding.values();
 	}
 	
 	public void putInterfaceConf(InterfaceConf ic){
@@ -47,6 +54,9 @@ public class Configuration extends Element{
 	public InterfaceConf getInterfaceConf(String s){
 		return mapInterfaceConf.get(s);
 	}
+	public Collection<InterfaceConf> getAllInterfacesConf(){
+		return mapInterfaceConf.values();
+	}
 
 	public void putAttachment(Attachment a){
 		mapAttachment.put(a.getName(), a);
@@ -57,6 +67,9 @@ public class Configuration extends Element{
 	public Attachment getAttachment(String s){
 		return mapAttachment.get(s);
 	}
+	public Collection<Attachment> getAllAttachments(){
+		return mapAttachment.values();
+	}
 	
 	public void putConnector(Connector c){
 		mapConnector.put(c.getName(), c);
@@ -66,5 +79,8 @@ public class Configuration extends Element{
 	}
 	public Connector getConnector(String s){
 		return mapConnector.get(s);
+	}
+	public Collection<Connector> getAllConnectors(){
+		return mapConnector.values();
 	}
 }
