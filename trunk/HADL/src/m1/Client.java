@@ -2,7 +2,6 @@ package m1;
 
 import m2.Component;
 import m2.InterfaceComp;
-import m2.Role;
 
 public class Client extends Component{
 	
