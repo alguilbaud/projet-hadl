@@ -14,7 +14,4 @@ public class Glue {
 		this.name = name;
 	}
 	
-	public void convert(){
-		
-	}
 }

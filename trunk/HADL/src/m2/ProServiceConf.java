@@ -1,18 +1,18 @@
 package m2;
 
 public class ProServiceConf extends InterfaceConf {
-	private ReqServiceConf from;
+	private ReqServiceConf to;
 	
-	public ProServiceConf(String s, ReqServiceConf from) {
+	public ProServiceConf(String s, ReqServiceConf to) {
 		super(s);
-		this.from = from;
+		this.to = to;
 	}
 	
-	public ReqServiceConf getFrom() {
-		return from;
+	protected ReqServiceConf getTo() {
+		return to;
 	}
-	public void setFrom(ReqServiceConf from) {
-		this.from = from;
+	protected void setTo(ReqServiceConf to) {
+		this.to = to;
 	}
 	
 }

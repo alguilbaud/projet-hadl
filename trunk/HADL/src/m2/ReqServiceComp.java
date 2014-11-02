@@ -1,19 +1,19 @@
 package m2;
 
 public class ReqServiceComp extends InterfaceComp {
-	private ProServiceComp to;
+	private ProServiceComp from;
 
-	public ReqServiceComp(String s, ProServiceComp to) {
+	public ReqServiceComp(String s, ProServiceComp from) {
 		super(s);
-		this.to = to;
+		this.from = from;
 	}
 
-	public ProServiceComp getTo() {
-		return to;
+	protected ProServiceComp getFrom() {
+		return from;
 	}
 
-	public void setTo(ProServiceComp to) {
-		this.to = to;
+	protected void setFrom(ProServiceComp from) {
+		this.from = from;
 	}
 	
 }

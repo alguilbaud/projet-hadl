@@ -10,17 +10,17 @@ public class AttachmentConfReq extends Attachment {
 		this.from = from;
 	}
 
-	public ReqPortConf getTo() {
+	protected ReqPortConf getTo() {
 		return to;
 	}
-	public void setTo(ReqPortConf to) {
+	protected void setTo(ReqPortConf to) {
 		this.to = to;
 	}
 
-	public ReqConfRole getFrom() {
+	protected ReqConfRole getFrom() {
 		return from;
 	}
-	public void setFrom(ReqConfRole from) {
+	protected void setFrom(ReqConfRole from) {
 		this.from = from;
 	}
 	
