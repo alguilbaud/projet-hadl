@@ -6,12 +6,12 @@ public class SimpleConnector extends Connector {
 	private HashMap<String, Role> mapRole;
 	private Glue glue;
 	
-	public SimpleConnector(String s, Glue g, Role r1, Role r2){
+	public SimpleConnector(String s, Role r1, Role r2){
 		super(s);
 		mapRole = new HashMap<String, Role>();
-		glue = g;
 		mapRole.put(r1.getName(), r1);
 		mapRole.put(r2.getName(), r2);
+		glue = null;
 	}
 
 	public Glue getGlue() {
