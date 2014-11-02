@@ -8,4 +8,7 @@ public class PortSendRequest extends ProPortComp{
 		super(name);
 	}
 
+	public String toString(){
+		return "PortSendRequest "+getName();
+	}
 }

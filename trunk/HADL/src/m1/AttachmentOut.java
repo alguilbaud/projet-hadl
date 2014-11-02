@@ -23,4 +23,8 @@ public class AttachmentOut extends AttachmentCompReq{
 	public void setCalled(Called c){
 		setFrom(c);
 	}
+	
+	public String toString(){
+		return "AttachmentOut "+getName()+" {"+getFrom()+" (from) linked with "+getTo()+" (to)}";
+	}
 }

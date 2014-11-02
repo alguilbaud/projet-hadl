@@ -7,5 +7,8 @@ public class Called extends ReqCompRole{
 	public Called(String name){
 		super(name);
 	}
-
+	
+	public String toString(){
+		return "Called "+getName();
+	}
 }

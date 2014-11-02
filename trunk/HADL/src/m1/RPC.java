@@ -1,5 +1,6 @@
 package m1;
 
+import m2.Role;
 import m2.SimpleConnector;
 
 public class RPC extends SimpleConnector{
@@ -40,5 +41,20 @@ public class RPC extends SimpleConnector{
 		}
 		catch (Exception e){}
 		return called;
+	}
+	
+	public String toString (){
+		String result = "RPC " + getName() + " [";
+		boolean premier = true;
+		for(Role r : getAllRoles()){
+			if (premier){
+				result = result + r;
+				premier = false;
+			}
+			else{
+				result = result + ", " + r;
+			}
+		}
+		return result + "]";
 	}
 }

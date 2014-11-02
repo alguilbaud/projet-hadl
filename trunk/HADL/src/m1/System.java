@@ -1,6 +1,9 @@
 package m1;
 
+import m2.Attachment;
 import m2.Configuration;
+import m2.Connector;
+import m2.Element;
 
 public class System extends Configuration {
 	
@@ -77,5 +80,43 @@ public class System extends Configuration {
 			att = (AttachmentOut) getAttachment(a);
 		} catch (Exception e){}
 		return att;
+	}
+	
+	public String toString (){
+		String result = "System " + getName() + " {\nClients and Servers :\n";
+		boolean premier = true;
+		for(Element e : getAllElements()){
+			if (premier){
+				result = result + e;
+				premier = false;
+			}
+			else{
+				result = result + "\n"+ e;
+			}
+		}
+		
+		premier = true;
+		for(Connector c : getAllConnectors()){
+			if (premier){
+				result = result + "\n\nRPCs :\n"+ c;
+				premier = false;
+			}
+			else{
+				result = result + "\n"+ c;
+			}
+		}
+		
+		premier = true;
+		for(Attachment a : getAllAttachments()){
+			if (premier){
+				result = result + "\n\nAttachments :\n"+ a;
+				premier = false;
+			}
+			else{
+				result = result + "\n"+ a;
+			}
+		}
+		
+		return result + "}";
 	}
 }

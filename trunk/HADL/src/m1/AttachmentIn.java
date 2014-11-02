@@ -23,4 +23,8 @@ public class AttachmentIn extends AttachmentCompPro{
 	public void setCaller(Caller c){
 		setTo(c);
 	}
+	
+	public String toString(){
+		return "AttachmentIn "+getName()+" [from : "+getFrom()+", to : "+getTo()+"]";
+	}
 }

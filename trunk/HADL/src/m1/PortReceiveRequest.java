@@ -7,4 +7,8 @@ public class PortReceiveRequest extends ReqPortComp{
 	public PortReceiveRequest(String name){
 		super(name);
 	}
+	
+	public String toString(){
+		return "PortReceiveRequest "+getName();
+	}
 }

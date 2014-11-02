@@ -1,6 +1,8 @@
 package m1;
 
 import m2.Component;
+import m2.InterfaceComp;
+import m2.Role;
 
 public class Client extends Component{
 	
@@ -19,5 +21,20 @@ public class Client extends Component{
 	
 	public PortSendRequest getPortSendRequest (String name){
 		return (PortSendRequest) getInterfaceComp(name);
+	}
+	
+	public String toString (){
+		String result = "Client " + getName() + " [";
+		boolean premier = true;
+		for(InterfaceComp i : getAllInterfacesComp()){
+			if (premier){
+				result = result + i;
+				premier = false;
+			}
+			else{
+				result = result + ", " + i;
+			}
+		}
+		return result + "]";
 	}
 }
