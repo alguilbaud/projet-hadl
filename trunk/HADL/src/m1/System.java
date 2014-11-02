@@ -117,6 +117,6 @@ public class System extends Configuration {
 			}
 		}
 		
-		return result + "}";
+		return result + "\n}";
 	}
 }
