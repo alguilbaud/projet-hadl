@@ -8,7 +8,7 @@ public class Configuration extends Element{
 	private HashMap<String, Binding> mapBinding;
 	private HashMap<String, InterfaceConf> mapInterfaceConf;
 	private HashMap<String, Attachment> mapAttachment;
-	private HashMap<String, Connector> mapConnector;
+	private HashMap<String, SimpleConnector> mapConnector;
 	
 	public Configuration(String s){
 		super(s);
@@ -16,7 +16,7 @@ public class Configuration extends Element{
 		mapBinding = new HashMap<String, Binding>();
 		mapInterfaceConf = new HashMap<String, InterfaceConf>();
 		mapAttachment = new HashMap<String, Attachment>();
-		mapConnector = new HashMap<String, Connector>();
+		mapConnector = new HashMap<String, SimpleConnector>();
 	}
 	
 	protected void putElement(Element e){
@@ -71,16 +71,16 @@ public class Configuration extends Element{
 		return mapAttachment.values();
 	}
 	
-	protected void putConnector(Connector c){
+	protected void putConnector(SimpleConnector c){
 		mapConnector.put(c.getName(), c);
 	}
 	protected void removeConnector(String s){
 		mapConnector.remove(s);
 	}
-	protected Connector getConnector(String s){
+	protected SimpleConnector getConnector(String s){
 		return mapConnector.get(s);
 	}
-	protected Collection<Connector> getAllConnectors(){
+	protected Collection<SimpleConnector> getAllConnectors(){
 		return mapConnector.values();
 	}
 }

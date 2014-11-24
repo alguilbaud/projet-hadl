@@ -1,10 +1,10 @@
 package m2;
 
-public class AttachmentCompReq extends Attachment{
+public class AttachmentCompOut extends Attachment{
 	private ReqPortComp to;
-	private ReqCompRole from;
+	private ProCompRole from;
 	
-	public AttachmentCompReq(String s, ReqPortComp to, ReqCompRole from) {
+	public AttachmentCompOut(String s, ProCompRole from, ReqPortComp to) {
 		super(s);
 		this.to = to;
 		this.from = from;
@@ -17,10 +17,10 @@ public class AttachmentCompReq extends Attachment{
 		this.to = to;
 	}
 
-	protected ReqCompRole getFrom() {
+	protected ProCompRole getFrom() {
 		return from;
 	}
-	protected void setFrom(ReqCompRole from) {
+	protected void setFrom(ProCompRole from) {
 		this.from = from;
 	}
 	

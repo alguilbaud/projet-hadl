@@ -1,8 +1,8 @@
 package m1;
 
-import m2.AttachmentCompPro;
+import m2.AttachmentCompIn;
 
-public class AttachmentIn extends AttachmentCompPro{
+public class AttachmentIn extends AttachmentCompIn{
 
 	public AttachmentIn(String name, PortSendRequest p, Caller c){
 		super(name, p, c);

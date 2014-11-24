@@ -3,25 +3,26 @@ package m2;
 import java.util.Collection;
 import java.util.HashMap;
 
-public class SimpleConnector extends Connector {
-	private HashMap<String, Role> mapRole;
+public abstract class SimpleConnector {
+	private String name;
 	private Glue glue;
+	private HashMap<String, Role> mapRole;
 	
-	public SimpleConnector(String s, Role r1, Role r2){
-		super(s);
+	public SimpleConnector(String s, Role role1, Role role2){
+		name = s;
 		mapRole = new HashMap<String, Role>();
-		mapRole.put(r1.getName(), r1);
-		mapRole.put(r2.getName(), r2);
+		mapRole.put(role1.getName(), role1);
+		mapRole.put(role2.getName(), role2);
 		glue = null;
 	}
 
-	protected Glue getGlue() {
-		return glue;
+	public String getName() {
+		return name;
 	}
-	protected void setGlue(Glue glue) {
-		this.glue = glue;
+	public void setName(String name) {
+		this.name = name;
 	}
-
+	
 	protected void putRole(Role r){
 		mapRole.put(r.getName(), r);
 	}
@@ -33,5 +34,12 @@ public class SimpleConnector extends Connector {
 	}
 	protected Collection<Role> getAllRoles(){
 		return mapRole.values();
+	}
+
+	public Glue getGlue() {
+		return glue;
+	}
+	public void setGlue(Glue glue) {
+		this.glue = glue;
 	}
 }

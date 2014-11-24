@@ -34,7 +34,7 @@ public class SimpleCS {
 		system.addAttachmentIn(attachmentIn1);
 		AttachmentIn attachmentIn2 = new AttachmentIn("attachmentIn2", send2, caller2);
 		system.addAttachmentIn(attachmentIn2);
-		AttachmentOut attachmentOut1 = new AttachmentOut("attachmentOut1", receive1, called1);
+		AttachmentOut attachmentOut1 = new AttachmentOut("attachmentOut1", called1, receive1);
 		system.addAttachmentOut(attachmentOut1);
 		
 		//Display

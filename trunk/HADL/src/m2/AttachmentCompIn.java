@@ -1,10 +1,10 @@
 package m2;
 
-public class AttachmentCompPro extends Attachment {
+public class AttachmentCompIn extends Attachment {
 	private ProPortComp from;
-	private ProCompRole to;
+	private ReqCompRole to;
 	
-	public AttachmentCompPro(String s, ProPortComp from, ProCompRole to) {
+	public AttachmentCompIn(String s, ProPortComp from, ReqCompRole to) {
 		super(s);
 		this.from = from;
 		this.to = to;
@@ -17,10 +17,10 @@ public class AttachmentCompPro extends Attachment {
 		this.from = from;
 	}
 
-	protected ProCompRole getTo() {
+	protected ReqCompRole getTo() {
 		return to;
 	}
-	protected void setTo(ProCompRole to) {
+	protected void setTo(ReqCompRole to) {
 		this.to = to;
 	}
 		
