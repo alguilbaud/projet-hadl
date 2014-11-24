@@ -2,7 +2,7 @@ package m1;
 
 import m2.Attachment;
 import m2.Configuration;
-import m2.Connector;
+import m2.SimpleConnector;
 import m2.Element;
 
 public class System extends Configuration {
@@ -96,7 +96,7 @@ public class System extends Configuration {
 		}
 		
 		premier = true;
-		for(Connector c : getAllConnectors()){
+		for(SimpleConnector c : getAllConnectors()){
 			if (premier){
 				result = result + "\n\nRPCs :\n"+ c;
 				premier = false;

@@ -1,11 +1,11 @@
 package m1;
 
-import m2.AttachmentCompReq;
+import m2.AttachmentCompOut;
 
-public class AttachmentOut extends AttachmentCompReq{
+public class AttachmentOut extends AttachmentCompOut{
 
-	public AttachmentOut(String name, PortReceiveRequest p, Called c){
-		super(name, p, c);
+	public AttachmentOut(String name, Called c, PortReceiveRequest p){
+		super(name, c, p);
 	}
 	
 	public PortReceiveRequest getPortReceiveRequest(){

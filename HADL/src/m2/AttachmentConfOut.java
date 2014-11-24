@@ -1,10 +1,10 @@
 package m2;
 
-public class AttachmentConfReq extends Attachment {
+public class AttachmentConfOut extends Attachment {
 	private ReqPortConf to;
-	private ReqConfRole from;
+	private ProConfRole from;
 	
-	public AttachmentConfReq(String s, ReqPortConf to, ReqConfRole from) {
+	public AttachmentConfOut(String s, ProConfRole from, ReqPortConf to) {
 		super(s);
 		this.to = to;
 		this.from = from;
@@ -17,10 +17,10 @@ public class AttachmentConfReq extends Attachment {
 		this.to = to;
 	}
 
-	protected ReqConfRole getFrom() {
+	protected ProConfRole getFrom() {
 		return from;
 	}
-	protected void setFrom(ReqConfRole from) {
+	protected void setFrom(ProConfRole from) {
 		this.from = from;
 	}
 	

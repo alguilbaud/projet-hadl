@@ -1,8 +1,8 @@
 package m1;
 
-import m2.ProCompRole;
+import m2.ReqCompRole;
 
-public class Caller extends ProCompRole{
+public class Caller extends ReqCompRole{
 
 	public Caller(String name){
 		super(name);
