@@ -9,14 +9,6 @@ public class RPC extends SimpleConnector{
 		super(name, c1, c2);
 	}
 	
-	public void addCaller(Caller c){
-		putRole(c);
-	}
-	
-	public void removeCaller(String name){
-		removeRole(name);
-	}
-	
 	public Caller getCaller(String name){
 		Caller caller = null;
 		try{
@@ -24,14 +16,6 @@ public class RPC extends SimpleConnector{
 		}
 		catch (Exception e){}
 		return caller;
-	}
-	
-	public void addCalled(Caller c){
-		putRole(c);
-	}
-	
-	public void removeCalled(String name){
-		removeRole(name);
 	}
 	
 	public Called getCalled(String name){

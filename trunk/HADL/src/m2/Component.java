@@ -24,4 +24,8 @@ public class Component extends Element{
 		return mapInterfaceComp.values();
 	}
 	
+	//methode appelée pour envoyer vers un autre composant
+	protected void sendCompToComp(){
+		
+	}
 }
