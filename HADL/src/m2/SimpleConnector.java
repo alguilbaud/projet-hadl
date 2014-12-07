@@ -8,11 +8,19 @@ public abstract class SimpleConnector {
 	private Glue glue;
 	private HashMap<String, Role> mapRole;
 	
-	public SimpleConnector(String s, Role role1, Role role2){
+	public SimpleConnector(String s, ReqCompRole roleReq, ProCompRole rolePro){
 		name = s;
 		mapRole = new HashMap<String, Role>();
-		mapRole.put(role1.getName(), role1);
-		mapRole.put(role2.getName(), role2);
+		mapRole.put(roleReq.getName(), roleReq);
+		mapRole.put(rolePro.getName(), rolePro);
+		glue = null;
+	}
+	
+	public SimpleConnector(String s, ReqConfRole roleReq, ProConfRole rolePro){
+		name = s;
+		mapRole = new HashMap<String, Role>();
+		mapRole.put(roleReq.getName(), roleReq);
+		mapRole.put(rolePro.getName(), rolePro);
 		glue = null;
 	}
 
@@ -23,12 +31,6 @@ public abstract class SimpleConnector {
 		this.name = name;
 	}
 	
-	protected void putRole(Role r){
-		mapRole.put(r.getName(), r);
-	}
-	protected void removeRole(String s){
-		mapRole.remove(s);
-	}
 	protected Role getRole(String s){
 		return mapRole.get(s);
 	}
