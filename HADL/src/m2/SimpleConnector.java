@@ -28,9 +28,6 @@ public abstract class SimpleConnector {
 	public String getName() {
 		return name;
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
 	
 	protected Role getRoleReq(){
 		return req;

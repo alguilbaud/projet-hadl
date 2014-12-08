@@ -13,10 +13,6 @@ public abstract class Binding {
 	public String getName() {
 		return name;
 	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 	
 	//methode appelee par la configuration du dessus pour faire progresser l'envoi d'un objet (redefinie dans les sous-classes)
 	void delegateSend(Object obj, String nameLastSender, String namePort){}
