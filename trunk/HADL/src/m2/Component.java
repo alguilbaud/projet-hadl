@@ -31,7 +31,8 @@ public class Component extends Element{
 		if(!getName().equals(nameLastSender)){
 			//si un port de la configuration a le nom namePort, c'est qu'elle est le destinataire final, donc on recupere l'objet
 			if (mapInterfaceComp.containsKey(namePort)){
-				objectReceived(obj);
+				System.out.println(getName() + " has received an object");
+				objectReceived(obj, namePort);
 			}
 		}
 	}

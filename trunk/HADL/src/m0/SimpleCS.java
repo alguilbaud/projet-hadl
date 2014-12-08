@@ -49,6 +49,11 @@ public class SimpleCS {
 		
 		//Display
 		java.lang.System.out.println(system);
+		java.lang.System.out.println();
+		java.lang.System.out.println("--------------------------------------------");
+		java.lang.System.out.println();
+		
+		client1.sendRequest(send1);
 	}
 
 }

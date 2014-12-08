@@ -54,10 +54,12 @@ public abstract class SimpleConnector {
 		if(!getName().equals(nameLastSender)){
 			//si le req ou le pro a le nom nameRole, SimpleConnector renvoie a la configuration du dessus en indiquant son nom et le nom de l'autre role
 			if (req.getName().equals(nameRole)){
-				upperConf.sendSameType(obj, getName(), pro.getName());
+				System.out.println("The sending is passing by " + getName());
+				upperConf.send(obj, getName(), pro.getName());
 			}
 			else if (pro.getName().equals(nameRole)){
-				upperConf.sendSameType(obj, getName(), req.getName());
+				System.out.println("The sending is passing by " + getName());
+				upperConf.send(obj, getName(), req.getName());
 			}
 		}
 	}
