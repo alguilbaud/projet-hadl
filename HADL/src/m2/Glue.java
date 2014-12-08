@@ -11,4 +11,9 @@ public class Glue {
 		return name;
 	}
 	
+	//fonction destinée à être redéfinie dans le M1 pour faire une vraie transformation
+	public Object transform(Object o){
+		return o;
+	}
+	
 }
