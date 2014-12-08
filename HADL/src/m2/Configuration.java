@@ -89,11 +89,11 @@ public class Configuration extends Element{
 	}
 	
 	
-	//methode pour envoyer un objet d'un composant vers un composant ou d'une configuration vers une configuration
+	//methode pour envoyer un objet d'un(e) composant/configuration vers un(e) composant/configuration
 	//nameLastSender est le nom du dernier objet qui a appele cette methode et namePortOrRole est le nom du port ou du role qui fait le lien avec l'objet suivant
-	void sendSameType(Object obj, String nameLastSender, String namePortOrRole){
+	protected void send(Object obj, String nameLastSender, String namePortOrRole){
 		
-		//on delegue aux elements, attachments et connecteurs simples 
+		//on delegue aux elements, attachments, connecteurs simples et bindings
 		for (Element e : getAllElements()){
 			e.delegateSend(obj, nameLastSender, namePortOrRole);
 		}
@@ -103,20 +103,9 @@ public class Configuration extends Element{
 		for (SimpleConnector c : getAllSimpleConnectors()){
 			c.delegateSend(obj, nameLastSender, namePortOrRole);
 		}
-	}
-	
-	//methode pour envoyer un objet d'un composant vers une configuration ou inversement
-	//nameLastSender est le nom du dernier objet qui a appele cette methode et namePortOrRole est le nom du port ou du role qui fait le lien avec l'objet suivant
-	void sendDifferentType(Object obj, String nameLastSender, String namePort){
-		
-		//on delegue aux elements et aux bindings
-		for (Element e : getAllElements()){
-			e.delegateSend(obj, nameLastSender, namePort);
-		}
 		for (Binding b : getAllBindings()){
-			b.delegateSend(obj, nameLastSender, namePort);
+			b.delegateSend(obj, nameLastSender, namePortOrRole);
 		}
-		
 	}
 	
 	//redifinition de la methode
@@ -125,7 +114,8 @@ public class Configuration extends Element{
 		if(!getName().equals(nameLastSender)){
 			//si un port de la configuration a le nom namePort, c'est qu'elle est le destinataire final, donc on recupere l'objet
 			if (mapInterfaceConf.containsKey(namePort)){
-				objectReceived(obj);
+				System.out.println(getName() + " has received an object");
+				objectReceived(obj, namePort);
 			}
 		}
 	}

@@ -22,6 +22,21 @@ public class Client extends Component{
 		return (PortSendRequest) getInterfaceComp(name);
 	}
 	
+	public void sendRequest(PortSendRequest p){
+		String namePort = p.getName();
+		if (getPortSendRequest(namePort)==null){
+			java.lang.System.out.println("The client " + getName() + " does not contain the PortSendRequest " + namePort);
+		}
+		java.lang.System.out.println(getName() + " is sending a request");
+		sendObject("", namePort);
+	}
+	
+	@Override
+	protected void objectReceived(Object obj, String namePort) {
+		String s = (String) obj;
+		java.lang.System.out.println("Response received by " + getName() + " : " + s);
+	}
+	
 	public String toString (){
 		String result = "Client " + getName() + " [";
 		boolean premier = true;
@@ -36,4 +51,5 @@ public class Client extends Component{
 		}
 		return result + "]";
 	}
+	
 }
