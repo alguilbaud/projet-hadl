@@ -8,7 +8,7 @@ public abstract class SimpleConnector {
 	private Role req;
 	private Role pro;
 	
-	//variable visible uniquement dans les classes du package m2, de manière que la configuration puisse y toucher, mais pas les classes du m1
+	//variable visible uniquement dans les classes du package m2, de maniï¿½re que la configuration puisse y toucher, mais pas les classes du m1
 	Configuration upperConf = null;
 	
 	public SimpleConnector(String s, ReqCompRole roleReq, ProCompRole rolePro){
@@ -52,11 +52,21 @@ public abstract class SimpleConnector {
 			//si le req ou le pro a le nom nameRole, SimpleConnector renvoie a la configuration du dessus en indiquant son nom et le nom de l'autre role
 			if (req.getName().equals(nameRole)){
 				System.out.println("The sending is passing by " + getName());
-				upperConf.send(obj, getName(), pro.getName());
+				Object o = obj;
+				if (glue!=null){
+					System.out.println(getName() + " : The object is transformed by the Glue " + glue.getName());
+					o = glue.transform(o);
+				}
+				upperConf.send(o, getName(), pro.getName());
 			}
 			else if (pro.getName().equals(nameRole)){
 				System.out.println("The sending is passing by " + getName());
-				upperConf.send(obj, getName(), req.getName());
+				Object o = obj;
+				if (glue!=null){
+					System.out.println(getName() + " : The object is transformed by the Glue" + glue.getName());
+					o = glue.transform(o);
+				}
+				upperConf.send(o, getName(), req.getName());
 			}
 		}
 	}
