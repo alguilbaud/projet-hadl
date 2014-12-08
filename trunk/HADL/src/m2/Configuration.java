@@ -21,6 +21,7 @@ public class Configuration extends Element{
 	
 	protected void putElement(Element e){
 		mapElement.put(e.getName(), e);
+		e.upperConf = this;
 	}
 	protected void removeElement(String s){
 		mapElement.remove(s);
@@ -34,6 +35,7 @@ public class Configuration extends Element{
 	
 	protected void putBinding(Binding b){
 		mapBinding.put(b.getName(), b);
+		b.upperConf = this;
 	}
 	protected void removeBinding(String s){
 		mapBinding.remove(s);
@@ -60,6 +62,7 @@ public class Configuration extends Element{
 
 	protected void putAttachment(Attachment a){
 		mapAttachment.put(a.getName(), a);
+		a.upperConf = this;
 	}
 	protected void removeAttachment(String s){
 		mapAttachment.remove(s);
@@ -71,16 +74,60 @@ public class Configuration extends Element{
 		return mapAttachment.values();
 	}
 	
-	protected void putConnector(SimpleConnector c){
+	protected void putSimpleConnector(SimpleConnector c){
 		mapConnector.put(c.getName(), c);
+		c.upperConf = this;
 	}
-	protected void removeConnector(String s){
+	protected void removeSimpleConnector(String s){
 		mapConnector.remove(s);
 	}
-	protected SimpleConnector getConnector(String s){
+	protected SimpleConnector getSimpleConnector(String s){
 		return mapConnector.get(s);
 	}
-	protected Collection<SimpleConnector> getAllConnectors(){
+	protected Collection<SimpleConnector> getAllSimpleConnectors(){
 		return mapConnector.values();
 	}
+	
+	
+	//methode pour envoyer un objet d'un composant vers un composant ou d'une configuration vers une configuration
+	//nameLastSender est le nom du dernier objet qui a appele cette methode et namePortOrRole est le nom du port ou du role qui fait le lien avec l'objet suivant
+	void sendSameType(Object obj, String nameLastSender, String namePortOrRole){
+		
+		//on delegue aux elements, attachments et connecteurs simples 
+		for (Element e : getAllElements()){
+			e.delegateSend(obj, nameLastSender, namePortOrRole);
+		}
+		for (Attachment a : getAllAttachments()){
+			a.delegateSend(obj, nameLastSender, namePortOrRole);
+		}
+		for (SimpleConnector c : getAllSimpleConnectors()){
+			c.delegateSend(obj, nameLastSender, namePortOrRole);
+		}
+	}
+	
+	//methode pour envoyer un objet d'un composant vers une configuration ou inversement
+	//nameLastSender est le nom du dernier objet qui a appele cette methode et namePortOrRole est le nom du port ou du role qui fait le lien avec l'objet suivant
+	void sendDifferentType(Object obj, String nameLastSender, String namePort){
+		
+		//on delegue aux elements et aux bindings
+		for (Element e : getAllElements()){
+			e.delegateSend(obj, nameLastSender, namePort);
+		}
+		for (Binding b : getAllBindings()){
+			b.delegateSend(obj, nameLastSender, namePort);
+		}
+		
+	}
+	
+	//redifinition de la methode
+	void delegateSend(Object obj, String nameLastSender, String namePort){
+		//si cet objet n'est pas le dernier a avoir envoye
+		if(!getName().equals(nameLastSender)){
+			//si un port de la configuration a le nom namePort, c'est qu'elle est le destinataire final, donc on recupere l'objet
+			if (mapInterfaceConf.containsKey(namePort)){
+				objectReceived(obj);
+			}
+		}
+	}
+	
 }

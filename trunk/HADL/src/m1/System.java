@@ -19,7 +19,7 @@ public class System extends Configuration {
 		putElement(c);
 	}
 	public void addRPC(RPC r){
-		putConnector(r);
+		putSimpleConnector(r);
 	}
 	public void addAttachmentIn(AttachmentIn a){
 		putAttachment(a);
@@ -36,7 +36,7 @@ public class System extends Configuration {
 		removeElement(c);
 	}
 	public void removeRPC(String r){
-		removeConnector(r);
+		removeSimpleConnector(r);
 	}
 	public void removeAttachmentIn(String a){
 		removeAttachment(a);
@@ -63,7 +63,7 @@ public class System extends Configuration {
 	}
 	
 	public RPC getRPC(String r){
-		return (RPC) getConnector(r);
+		return (RPC) getSimpleConnector(r);
 	}
 	
 	public AttachmentIn getAttachmentIn(String a){
@@ -96,7 +96,7 @@ public class System extends Configuration {
 		}
 		
 		premier = true;
-		for(SimpleConnector c : getAllConnectors()){
+		for(SimpleConnector c : getAllSimpleConnectors()){
 			if (premier){
 				result = result + "\n\nRPCs :\n"+ c;
 				premier = false;

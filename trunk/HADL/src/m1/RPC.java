@@ -1,6 +1,5 @@
 package m1;
 
-import m2.Role;
 import m2.SimpleConnector;
 
 public class RPC extends SimpleConnector{
@@ -12,7 +11,7 @@ public class RPC extends SimpleConnector{
 	public Caller getCaller(String name){
 		Caller caller = null;
 		try{
-			caller = (Caller) getRole(name);
+			caller = (Caller) getRoleReq();
 		}
 		catch (Exception e){}
 		return caller;
@@ -21,24 +20,13 @@ public class RPC extends SimpleConnector{
 	public Called getCalled(String name){
 		Called called = null;
 		try{
-			called = (Called) getRole(name);
+			called = (Called) getRolePro();
 		}
 		catch (Exception e){}
 		return called;
 	}
 	
-	public String toString (){
-		String result = "RPC " + getName() + " [";
-		boolean premier = true;
-		for(Role r : getAllRoles()){
-			if (premier){
-				result = result + r;
-				premier = false;
-			}
-			else{
-				result = result + ", " + r;
-			}
-		}
-		return result + "]";
+	public String toString(){
+		return "RPC "+getName()+" [req : "+getRoleReq()+", pro : "+getRolePro()+"]";
 	}
 }
