@@ -24,8 +24,15 @@ public class Component extends Element{
 		return mapInterfaceComp.values();
 	}
 	
-	//methode appelée pour envoyer vers un autre composant
-	protected void sendCompToComp(){
-		
+	
+	//redifinition de la methode
+	void delegateSend(Object obj, String nameLastSender, String namePort){
+		//si cet objet n'est pas le dernier a avoir envoye
+		if(!getName().equals(nameLastSender)){
+			//si un port de la configuration a le nom namePort, c'est qu'elle est le destinataire final, donc on recupere l'objet
+			if (mapInterfaceComp.containsKey(namePort)){
+				objectReceived(obj);
+			}
+		}
 	}
 }

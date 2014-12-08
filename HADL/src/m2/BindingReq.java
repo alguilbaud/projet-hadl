@@ -26,4 +26,19 @@ public class BindingReq extends Binding {
 	public void setFrom(ReqPortConf from) {
 		this.from = from;
 	}
+	
+	//redefinition de la methode
+	void delegateSend(Object obj, String nameLastSender, String namePort){
+		
+		//si cet objet n'est pas le dernier a avoir envoye
+		if(!getName().equals(nameLastSender)){
+			//si le from ou le to a le nom namePort, ce binding renvoie a la configuration du dessus en indiquant son nom et le nom de l'autre port
+			if (from.getName().equals(namePort)){
+				upperConf.sendDifferentType(obj, getName(), to.getName());
+			}
+			else if (to.getName().equals(namePort)){
+				upperConf.sendDifferentType(obj, getName(), from.getName());
+			}
+		}
+	}
 }

@@ -1,26 +1,27 @@
 package m2;
 
-import java.util.Collection;
-import java.util.HashMap;
 
 public abstract class SimpleConnector {
 	private String name;
 	private Glue glue;
-	private HashMap<String, Role> mapRole;
+	
+	private Role req;
+	private Role pro;
+	
+	//variable visible uniquement dans les classes du package m2, de manière que la configuration puisse y toucher, mais pas les classes du m1
+	Configuration upperConf = null;
 	
 	public SimpleConnector(String s, ReqCompRole roleReq, ProCompRole rolePro){
 		name = s;
-		mapRole = new HashMap<String, Role>();
-		mapRole.put(roleReq.getName(), roleReq);
-		mapRole.put(rolePro.getName(), rolePro);
+		this.req = roleReq;
+		this.pro = rolePro;
 		glue = null;
 	}
 	
 	public SimpleConnector(String s, ReqConfRole roleReq, ProConfRole rolePro){
 		name = s;
-		mapRole = new HashMap<String, Role>();
-		mapRole.put(roleReq.getName(), roleReq);
-		mapRole.put(rolePro.getName(), rolePro);
+		this.req = roleReq;
+		this.pro = rolePro;
 		glue = null;
 	}
 
@@ -31,11 +32,11 @@ public abstract class SimpleConnector {
 		this.name = name;
 	}
 	
-	protected Role getRole(String s){
-		return mapRole.get(s);
+	protected Role getRoleReq(){
+		return req;
 	}
-	protected Collection<Role> getAllRoles(){
-		return mapRole.values();
+	protected Role getRolePro(){
+		return pro;
 	}
 
 	public Glue getGlue() {
@@ -43,5 +44,21 @@ public abstract class SimpleConnector {
 	}
 	public void setGlue(Glue glue) {
 		this.glue = glue;
+	}
+	
+	
+	//methode appelee par la configuration du dessus pour faire progresser l'envoi d'un objet
+	void delegateSend(Object obj, String nameLastSender, String nameRole){
+		
+		//si cet objet n'est pas le dernier a avoir envoye
+		if(!getName().equals(nameLastSender)){
+			//si le req ou le pro a le nom nameRole, SimpleConnector renvoie a la configuration du dessus en indiquant son nom et le nom de l'autre role
+			if (req.getName().equals(nameRole)){
+				upperConf.sendSameType(obj, getName(), pro.getName());
+			}
+			else if (pro.getName().equals(nameRole)){
+				upperConf.sendSameType(obj, getName(), req.getName());
+			}
+		}
 	}
 }
