@@ -13,10 +13,6 @@ public abstract class Element {
 	public String getName() {
 		return name;
 	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 	
 	protected void sendObject(Object obj, String namePort){
 		upperConf.send(obj, getName(), namePort);
