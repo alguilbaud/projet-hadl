@@ -91,7 +91,7 @@ public class Configuration extends Element{
 	
 	//methode pour envoyer un objet d'un(e) composant/configuration vers un(e) composant/configuration
 	//nameLastSender est le nom du dernier objet qui a appele cette methode et namePortOrRole est le nom du port ou du role qui fait le lien avec l'objet suivant
-	protected void send(Object obj, String nameLastSender, String namePortOrRole){
+	void send(Object obj, String nameLastSender, String namePortOrRole){
 		
 		//on delegue aux elements, attachments, connecteurs simples et bindings
 		for (Element e : getAllElements()){
