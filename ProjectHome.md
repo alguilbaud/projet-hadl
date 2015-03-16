@@ -1,0 +1,1 @@
+Création d'une instance à partir d'un modèle (et d'un méta modèle), sous la forme d'un client/serveur.
